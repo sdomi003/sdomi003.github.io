@@ -1,0 +1,57 @@
+html,body {
+    height: 100%;
+    max-height: 100vh;
+}
+
+/*
+Make the nav centered.
+ */
+.nav-tabs > li {
+    float:none;
+    display:inline-block;
+    zoom:1;
+}
+
+.nav-tabs {
+    text-align:center;
+}
+
+#aboutMeParagraph {
+    padding: 40px;
+    background-color: #cc5677;
+    text-align: center;
+}
+#name {
+    color: #cc5677;
+}
+
+#aboutMeTitle {
+    padding: 30px;
+    color: #cc5677;
+    text-align: center;
+}
+
+#experienceTitle {
+    padding: 30px;
+    color: #cc5677;
+    text-align: center;
+}
+
+#aboutMeDiv {
+    color: #393939;
+    font-size: medium;
+    padding: 20px;
+    background-color: #72abcc;
+    text-align: center;
+}
+
+#about-me-tab {
+    color: #cc5677;
+}
+
+#experience-tab {
+    color: #cc5677;
+}
+#blog-tab {
+    color: #cc5677;
+}

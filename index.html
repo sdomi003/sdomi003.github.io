@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Sam's Personal Website</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="backstyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.dom.js"></script>
+    <script type="text/javascript" src="experienceTab.js"></script>
+    <script type="text/javascript" src="aboutMeTab.js"></script>
+</head>
+
+<body>
+    <div id="aboutMeDiv">
+        <h1 id="name" style="text-align: center">
+            Samuel Dominguez
+        </h1>
+        <p id="aboutMeParagraph">
+            Hello there, you've somehow landed on my page. Whether you're a friend, colleague, recruiter and/or stranger,
+            I am glad you're here. Please take some time to browse through the tabs I've prepared below. Thank you.
+        </p>
+    </div>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="about-me-tab" data-toggle="tab" href="#aboutMe" role="tab" aria-controls="aboutMe" aria-selected="true">About Me</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="experience-tab" data-toggle="tab" href="#experience" role="tab" aria-controls="experience" aria-selected="false">Experience</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="blog-tab" data-toggle="tab" href="#blog" role="tab" aria-controls="blog" aria-selected="false">Blog</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade" id="aboutMe" role="tabpanel" aria-labelledby="about-me-tab">
+            <h1 id = "aboutMeTitle">
+                About Me, Sam
+            </h1>
+        </div>
+        <div class="tab-pane fade" id="experience" role="tabpanel" aria-labelledby="experience-tab">
+            <h1 id = "experienceTitle">
+                My Experience
+            </h1>
+        </div>
+        <div class="tab-pane fade" id="blog" role="tabpanel" aria-labelledby="blog-tab">...</div>
+    </div>
+</body>
+</html>
