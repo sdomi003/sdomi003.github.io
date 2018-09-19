@@ -1,7 +1,8 @@
-/*html,body {*/
-    /*height: 100%;*/
-    /*max-height: 100vh;*/
-/*}*/
+html,body {
+    padding: 0;
+    margin: 0;
+    background-color: white;
+}
 
 /*
 Make the nav centered.
@@ -14,26 +15,30 @@ Make the nav centered.
 
 .nav-tabs {
     text-align:center;
+    font-size: large;
 }
 
 #aboutMeParagraph {
+    color: black;
     padding: 40px;
-    background-color: #cc5677;
+    background-color: #c49d24;
     text-align: center;
 }
 #name {
-    color: #cc5677;
+    padding-bottom: 20px;
+    font-size: 50px;
+    color: whitesmoke;
 }
 
 #aboutMeTitle {
     padding: 30px;
-    color: #cc5677;
+    color: #002846;
     text-align: center;
 }
 
 #experienceTitle {
     padding: 30px;
-    color: #cc5677;
+    color: #002846;
     text-align: center;
 }
 
@@ -41,19 +46,19 @@ Make the nav centered.
     color: #393939;
     font-size: medium;
     padding: 20px;
-    background-color: #72abcc;
+    background-color: #002846;
     text-align: center;
 }
 
 #about-me-tab {
-    color: #cc5677;
+    color: black;
 }
 
 #experience-tab {
-    color: #cc5677;
+    color: black;
 }
 #blog-tab {
-    color: #cc5677;
+    color: black;
 }
 
 .popover{
@@ -62,7 +67,7 @@ Make the nav centered.
 
 .popover-title {
     text-align: center;
-    color: blue;
+    color: black;
     font-size: 20px;
 }
 .popover-content {
@@ -71,18 +76,18 @@ Make the nav centered.
 }
 
 #arcDateAndTimePar {
-    color: #ffffff;
+    color: black;
 }
 
 #sylmarDateAndTimePar {
-    color: #ffffff;
+    color: black;
 }
 
 #amazonDateAndTimePar {
-    color: #ffffff;
+    color: black;
 }
 
-#experiencePar {
-    color : #72abcc;
-    text-align: center;
+.btn-primary {
+    background-color: #002846;
+    color: white;
 }

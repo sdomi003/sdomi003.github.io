@@ -59,7 +59,7 @@ var experienceAnimation = function( p ) {
 
     p.draw = function() {
         console.log(canvas.position().y);
-        p.background('black');
+        p.background('white');
         if (tabClicked === true) {
             drawBottomLine();
             if (bottomLineDone === true) {
@@ -70,7 +70,6 @@ var experienceAnimation = function( p ) {
                     drawButtons();
                     drawDates();
                 }
-
             }
         }
     };
@@ -81,7 +80,8 @@ var experienceAnimation = function( p ) {
      */
     function drawBottomLine() {
         p.push();
-        p.stroke('white');
+        p.strokeWeight(4);
+        p.stroke('#f0d200');
         p.line(50, p.height/2, bottomLineLength, p.height/2);
         if (bottomLineLength < p.width - 50) {
             bottomLineLength += 10;
@@ -97,10 +97,11 @@ var experienceAnimation = function( p ) {
      */
     function drawStems() {
         p.push();
+        p.strokeWeight(2);
         var firstFourth = p.width / 4; // timeline starts at 50px
         var secondFourth = p.width / 2;
         var thirdFourth = 3 * p.width / 4;
-        p.stroke('white');
+        p.stroke('#f0d200');
         p.noFill();
 
         p.curve(p.width/4 + 200, p.height/3, firstFourth, p.height/2 - stemElapsed, firstFourth, p.height/2, p.width/4, p.height);
@@ -108,7 +109,7 @@ var experienceAnimation = function( p ) {
         p.curve(3*p.width/4 + 200, p.height/3, thirdFourth, p.height/2 - stemElapsed, thirdFourth, p.height/2, 3*p.width/4, p.height);
 
         if (stemElapsed < p.height/4 - 15) {
-            stemElapsed += 5;
+            stemElapsed += 2;
         } else {
             stemDone = true;
         }
@@ -167,6 +168,19 @@ var experienceAnimation = function( p ) {
     function showAnimation() {
         tabClicked = true;
     }
+
+    /**
+     * If the user re-sizes the window, re-size everything as well.
+     */
+    p.windowResized = function() {
+        if (tabClicked) {
+            canvas.size(p.windowWidth, 500);
+            bottomLineDone = false;
+            stemDone = false;
+            buttonsMade = false;
+        }
+
+    };
 };
 
 var myp5 = new p5(experienceAnimation, 'experience');
