@@ -3,25 +3,62 @@ The animation for the experience tab.
  */
 
 var experienceAnimation = function( p ) {
+    var canvas;
+
+    /*
+    When tabClicked is true, the user has clicked the 'experience' tab.
+    This will launch the animation.
+     */
     var tabClicked = false;
+
+    /*
+    True only after the bottom line of the animation is done.
+     */
     var bottomLineDone = false;
     var stemDone = false;
     var bottomLineLength = 50;
     var stemElapsed= 0;
+
+    /*
+    The buttons to make and whether or not they have been made.
+     */
     var buttonsMade;
     var arcButton;
     var sylmarButton;
     var amazonButton;
 
+
+    var arcDateAndLocation;
+    var sylmarDateAndLocation;
+    var amazonDateAndLocation;
+
     p.setup = function() {
-        var canvas = p.createCanvas(p.windowWidth, p.windowHeight/2);
-        var j = (p.windowHeight / 2);
-        canvas.position(0, j);
+        canvas = p.createCanvas(p.windowWidth, 500);
+        canvas.style('z-index', '-1');
         var experienceTab = p.select('#experience-tab');
         experienceTab.mouseClicked(showAnimation);
+
+        arcButton = p.select('#arcPopUp');
+        arcButton.hide();
+
+        sylmarButton = p.select('#sylmarPopUp');
+        sylmarButton.hide();
+
+        amazonButton = p.select('#amazonPopUp');
+        amazonButton.hide();
+
+        arcDateAndLocation = p.select('#arcDateAndTimePar');
+        arcDateAndLocation.hide();
+
+        sylmarDateAndLocation = p.select('#sylmarDateAndTimePar');
+        sylmarDateAndLocation.hide();
+
+        amazonDateAndLocation = p.select('#amazonDateAndTimePar');
+        amazonDateAndLocation.hide();
     };
 
     p.draw = function() {
+        console.log(canvas.position().y);
         p.background('black');
         if (tabClicked === true) {
             drawBottomLine();
@@ -64,11 +101,14 @@ var experienceAnimation = function( p ) {
         var secondFourth = p.width / 2;
         var thirdFourth = 3 * p.width / 4;
         p.stroke('white');
-        p.line(firstFourth, p.height/2 - stemElapsed, firstFourth, p.height/2);
-        p.line(secondFourth, p.height/2 + stemElapsed, secondFourth, p.height/2);
-        p.line(thirdFourth, p.height/2 - stemElapsed, thirdFourth, p.height/2);
-        if (stemElapsed < p.height/4) {
-            stemElapsed += 10;
+        p.noFill();
+
+        p.curve(p.width/4 + 200, p.height/3, firstFourth, p.height/2 - stemElapsed, firstFourth, p.height/2, p.width/4, p.height);
+        p.curve(p.width/2 + 200, p.height/2, secondFourth, p.height/2 + stemElapsed, secondFourth, p.height/2, p.width/2, p.height/3);
+        p.curve(3*p.width/4 + 200, p.height/3, thirdFourth, p.height/2 - stemElapsed, thirdFourth, p.height/2, 3*p.width/4, p.height);
+
+        if (stemElapsed < p.height/4 - 15) {
+            stemElapsed += 5;
         } else {
             stemDone = true;
         }
@@ -76,7 +116,7 @@ var experienceAnimation = function( p ) {
     }
 
     /**
-     * Draws the dates.
+     * Shows the dates.
      * This is the third part of the animation along with {@link drawButtons}
      */
     function drawDates() {
@@ -84,21 +124,18 @@ var experienceAnimation = function( p ) {
         var secondFourth = p.width / 2;
         var thirdFourth = 3 * p.width / 4;
 
-        var arcDate = p.createP('Summer and Fall 2016');
-        arcDate.position(firstFourth, p.windowHeight/2 +  p.height/2 + 10);
-        arcDate.style('color', 'white');
+        arcDateAndLocation.position(firstFourth, canvas.position().y +  p.height/2 + 10);
+        arcDateAndLocation.show();
 
-        var sylmarDate = p.createP('Summer and Fall 2016');
-        sylmarDate.position(secondFourth, p.windowHeight/2 +  p.height/2 - 25);
-        sylmarDate.style('color', 'white');
+        sylmarDateAndLocation.position(secondFourth, canvas.position().y +  p.height/2 - 50);
+        sylmarDateAndLocation.show();
 
-        var amazonDate = p.createP('Summer and Fall 2016');
-        amazonDate.position(thirdFourth, p.windowHeight/2 +  p.height/2 + 10);
-        amazonDate.style('color', 'white');
+        amazonDateAndLocation.position(thirdFourth, canvas.position().y +  p.height/2 + 10);
+        amazonDateAndLocation.show();
     }
 
     /**
-    Draws the buttons on the timeline.
+    Shows the buttons on the timeline.
     Invoked only once in {@link drawBottomLine}.
     This is the third part of the animation along with {@link drawDates}
      */
@@ -107,14 +144,17 @@ var experienceAnimation = function( p ) {
         var secondFourth = p.width / 2;
         var thirdFourth = 3 * p.width / 4;
 
-        arcButton = p.createButton('ARC 35');
-        arcButton.position(firstFourth, p.windowHeight/2 + p.height/4);
+        arcButton.position(firstFourth, canvas.position().y + p.height/4);
+        arcButton.size(p.width/4, p.height/2);
+        arcButton.show();
 
-        sylmarButton = p.createButton('SYLMAR CODE');
-        sylmarButton.position(secondFourth, p.windowHeight/2 + 3*p.height/4);
+        sylmarButton.position(secondFourth, canvas.position().y + 3*p.height/4 - 25);
+        sylmarButton.size(p.width/4, p.height/2);
+        sylmarButton.show();
 
-        amazonButton = p.createButton('AMAZON');
-        amazonButton.position(thirdFourth, p.windowHeight/2 + p.height/4);
+        amazonButton.position(thirdFourth, canvas.position().y + p.height/4);
+        amazonButton.size(p.width/4, p.height/2);
+        amazonButton.show();
 
         buttonsMade = true;
     }

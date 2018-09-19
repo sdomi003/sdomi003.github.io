@@ -1,7 +1,7 @@
-html,body {
-    height: 100%;
-    max-height: 100vh;
-}
+/*html,body {*/
+    /*height: 100%;*/
+    /*max-height: 100vh;*/
+/*}*/
 
 /*
 Make the nav centered.
@@ -54,4 +54,35 @@ Make the nav centered.
 }
 #blog-tab {
     color: #cc5677;
+}
+
+.popover{
+    width: 100%; /* Max Width of the popover (depending on the container!) */
+}
+
+.popover-title {
+    text-align: center;
+    color: blue;
+    font-size: 20px;
+}
+.popover-content {
+    color: black;
+    font-size: 15px;
+}
+
+#arcDateAndTimePar {
+    color: #ffffff;
+}
+
+#sylmarDateAndTimePar {
+    color: #ffffff;
+}
+
+#amazonDateAndTimePar {
+    color: #ffffff;
+}
+
+#experiencePar {
+    color : #72abcc;
+    text-align: center;
 }

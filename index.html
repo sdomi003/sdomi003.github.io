@@ -28,6 +28,7 @@
             I'm glad you're here. Please take some time to browse through the tabs I've prepared below. Thank you.
         </p>
     </div>
+
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item">
             <a class="nav-link active" id="about-me-tab" data-toggle="tab" href="#aboutMe" role="tab" aria-controls="aboutMe" aria-selected="true">About Me</a>
@@ -39,18 +40,80 @@
             <a class="nav-link" id="blog-tab" data-toggle="tab" href="#blog" role="tab" aria-controls="blog" aria-selected="false">Blog</a>
         </li>
     </ul>
+
     <div class="tab-content" id="myTabContent">
+
         <div class="tab-pane fade" id="aboutMe" role="tabpanel" aria-labelledby="about-me-tab">
             <h1 id = "aboutMeTitle">
                 About Me, Sam
             </h1>
         </div>
+
         <div class="tab-pane fade" id="experience" role="tabpanel" aria-labelledby="experience-tab">
+
             <h1 id = "experienceTitle">
                 My Experience
             </h1>
+            <p id="arcDateAndTimePar">
+                Summer & Fall 2016 <br> Riverside, CA
+            </p>
+            <p id="sylmarDateAndTimePar">
+                Summer 2017 <br> Los Angeles, CA
+            </p>
+            <p id="amazonDateAndTimePar">
+                Summer 2018 <br> Seattle, WA
+            </p>
+
+            <div id="arcPopUp">
+                <button class="btn btn-primary"
+                        id="arcButtonPopover"
+                        title="ARC 35 Lab Leader"
+                        data-placement="top"
+                        data-toggle="popover"
+                        data-trigger="focus"
+                        data-html="true"
+                        data-content="Helped incoming freshmen at UC Riverside develop their math
+                                        skills in a 2-hour class that met 3 times a week.">
+                    ARC 35
+                </button>
+            </div>
+            <div id="sylmarPopUp">
+                <button class="btn btn-primary"
+                        id="sylmarButtonPopover"
+                        title="Sylmar Code Instructor"
+                        data-placement="right"
+                        data-toggle="popover"
+                        data-trigger="focus"
+                        data-html="true"
+                        data-content="Created and taught lessons on programming to kids.
+                                        <a href='https://sdomi003.wixsite.com/sylmar-code'
+                                        target='_blank'>
+                                        Sylmar Code Website</a>">
+                    Sylmar Code
+                </button>
+            </div>
+            <div id="amazonPopUp">
+                <button class="btn btn-primary"
+                        id="amazonButtonPopover"
+                        title="Amazon Software Engineering Intern"
+                        data-placement="top"
+                        data-toggle="popover"
+                        data-trigger="focus"
+                        data-content="Surrounded by experienced engineers, I assisted my team by listening to our
+                                        customers in order to engineer impactful tools using AWS S3 and Java.">
+                    Amazon
+                </button>
+            </div>
+            <script type="text/javascript">
+                $(function () {
+                    $('[data-toggle="popover"]').popover()
+                })
+            </script>
+
         </div>
+
         <div class="tab-pane fade" id="blog" role="tabpanel" aria-labelledby="blog-tab">...</div>
     </div>
+
 </body>
 </html>
