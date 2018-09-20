@@ -30,12 +30,6 @@ Make the nav centered.
     color: whitesmoke;
 }
 
-#aboutMeTitle {
-    padding: 30px;
-    color: #002846;
-    text-align: center;
-}
-
 #experienceTitle {
     padding: 30px;
     color: #002846;
@@ -69,6 +63,7 @@ Make the nav centered.
     text-align: center;
     color: black;
     font-size: 20px;
+
 }
 .popover-content {
     color: black;
@@ -91,3 +86,10 @@ Make the nav centered.
     background-color: #002846;
     color: white;
 }
+
+#aboutMeTitle {
+    padding: 30px;
+    color: #002846;
+    text-align: center;
+}
+

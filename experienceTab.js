@@ -33,7 +33,7 @@ var experienceAnimation = function( p ) {
     var amazonDateAndLocation;
 
     p.setup = function() {
-        canvas = p.createCanvas(p.windowWidth, 500);
+        canvas = p.createCanvas(p.windowWidth - 50, 500);
         canvas.style('z-index', '-1');
         var experienceTab = p.select('#experience-tab');
         experienceTab.mouseClicked(showAnimation);
@@ -174,7 +174,7 @@ var experienceAnimation = function( p ) {
      */
     p.windowResized = function() {
         if (tabClicked) {
-            canvas.size(p.windowWidth, 500);
+            canvas.size(p.windowWidth, 500 - 50);
             bottomLineDone = false;
             stemDone = false;
             buttonsMade = false;
