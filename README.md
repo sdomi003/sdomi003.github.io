@@ -1,2 +1,6 @@
-# personal_site
-My personal website.
+
+#My Personal Website
+
+## License
+
+[See the license file.](./LICENSE.md)
