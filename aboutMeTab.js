@@ -7,6 +7,7 @@ var aboutMeAnimation = function( p ) {
     var canvas;
     var x;
     var y;
+    var lineTrail = [];
 
     p.setup = function() {
         x = 500;
@@ -20,12 +21,19 @@ var aboutMeAnimation = function( p ) {
     };
 
     p.draw = function() {
-        p.clear();
         p.image(sampleVideo, 0, 0);
 
-        p.stroke('black');
-        p.rect(x, y, 50, 50);
-        x += 1;
+        if (p.mouseIsPressed) {
+            lineTrail.push([p.pmouseX, p.pmouseY, p.mouseX, p.mouseY]);
+        }
+        var i;
+        for(i = 0; i < lineTrail.length; ++i) {
+            p.line(lineTrail[i][0], lineTrail[i][1], lineTrail[i][2], lineTrail[i][3]);
+        }
+
+        // p.stroke('black');
+        // p.rect(x, y, 50, 50);
+        // x += 1;
 
 
     };

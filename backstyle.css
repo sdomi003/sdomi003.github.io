@@ -1,58 +1,48 @@
 html,body {
     padding: 0;
     margin: 0;
-    background-color: white;
+    background-color: #ffffff;
 }
 
-/*
-Make the nav centered.
- */
+#nameDiv {
+    color: #393939;
+    padding: 20px;
+    background-color: #323149;
+    text-align: right;
+}
+
+#name {
+    font-weight: bolder;
+    font-size:  xx-large;
+    color: 	#FFFFFF;
+}
+
 .nav-tabs > li {
     float:none;
-    display:inline-block;
-    zoom:1;
+    display: inline-block;
+    zoom: normal;
 }
 
 .nav-tabs {
-    text-align:center;
-    font-size: large;
+    text-align: center;
+    font-size: xx-large;
+    background-color: #FFF494;
+    background-size: 50px;
 }
 
-#aboutMeParagraph {
-    color: black;
-    padding: 40px;
-    background-color: #c49d24;
-    text-align: center;
-}
-#name {
-    padding-bottom: 20px;
-    font-size: 50px;
-    color: whitesmoke;
-}
-
-#experienceTitle {
-    padding: 30px;
-    color: #002846;
-    text-align: center;
-}
-
-#aboutMeDiv {
-    color: #393939;
-    font-size: medium;
-    padding: 20px;
-    background-color: #002846;
-    text-align: center;
-}
 
 #about-me-tab {
-    color: black;
+    font-size: xx-large;
+    color: #4A7B68;
 }
 
 #experience-tab {
-    color: black;
+    font-size: xx-large;
+    color: #3d3d42;
 }
 #blog-tab {
-    color: black;
+    font-size: xx-large;
+    color: #8F8E9B;
 }
 
 .popover{
@@ -90,6 +80,21 @@ Make the nav centered.
 #aboutMeTitle {
     padding: 30px;
     color: #002846;
-    text-align: center;
+    text-align: left;
 }
 
+#experienceTitle {
+    padding: 30px;
+    color: #c1cdc1;
+    text-align: left;
+}
+
+
+.padding-0{
+    padding-right:0;
+    padding-left:0;
+}
+
+/*.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {*/
+    /*background-color: #ECECEE;*/
+/*}*/
