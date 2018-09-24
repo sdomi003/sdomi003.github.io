@@ -1,9 +1,11 @@
 /*
 The animation for the aboutme tab.
  */
-
+var aboutTabClicked = false;
+var aboutMeVidPlaying = false;
+var aboutMeVideo;
 var aboutMeAnimation = function( p ) {
-    var sampleVideo;
+    var clearDrawingButton;
     var canvas;
     var x;
     var y;
@@ -13,35 +15,42 @@ var aboutMeAnimation = function( p ) {
         x = 500;
         y = 500;
 
-        sampleVideo = p.createVideo(['second.mp4']);
-        sampleVideo.size(p.windowWidth - 20, 3*p.windowWidth/4);
-        sampleVideo.hide();
+        aboutMeVideo = p.createVideo(['second.mp4']);
+        aboutMeVideo.size(p.windowWidth - 20, 3*p.windowWidth/4);
+        aboutMeVideo.hide();
 
         canvas = p.createCanvas(p.windowWidth - 20, 3*p.windowWidth/4);
+
+        var experienceTab = p.select('#about-me-tab');
+        experienceTab.mouseClicked(playVideo);
+
     };
 
     p.draw = function() {
-        p.image(sampleVideo, 0, 0);
-
-        if (p.mouseIsPressed) {
-            lineTrail.push([p.pmouseX, p.pmouseY, p.mouseX, p.mouseY]);
+        if (aboutTabClicked) {
+            p.image(aboutMeVideo, 0, 0);
+            if (p.mouseIsPressed) {
+                lineTrail.push([p.pmouseX, p.pmouseY, p.mouseX, p.mouseY]);
+            }
+            var i;
+            for(i = 0; i < lineTrail.length; ++i) {
+                p.line(lineTrail[i][0], lineTrail[i][1], lineTrail[i][2], lineTrail[i][3]);
+            }
         }
-        var i;
-        for(i = 0; i < lineTrail.length; ++i) {
-            p.line(lineTrail[i][0], lineTrail[i][1], lineTrail[i][2], lineTrail[i][3]);
-        }
-
-        // p.stroke('black');
-        // p.rect(x, y, 50, 50);
-        // x += 1;
-
-
     };
 
-    p.mousePressed = function() {
-        sampleVideo.play(); // set the video to loop and start playing
+    function playVideo() {
+        aboutMeVideo.play(); // set the video to loop and start playing
+        aboutTabClicked = true;
+        aboutMeVidPlaying = true;
+        clearDrawingButton = p.createButton('Clear My Sketch');
+        clearDrawingButton.position(p.windowWidth / 2, canvas.position().y + p.height / 4);
+        clearDrawingButton.mouseClicked(eraseUserSketch);
     }
 
+    function eraseUserSketch() {
+        lineTrail = [];
+    }
 };
 
 var aboutMe = new p5(aboutMeAnimation, 'aboutMe');

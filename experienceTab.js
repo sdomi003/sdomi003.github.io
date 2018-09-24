@@ -1,15 +1,14 @@
 /*
 The animation for the experience tab.
  */
-
+var experienceTabClicked = false;
 var experienceAnimation = function( p ) {
     var canvas;
-
     /*
-    When tabClicked is true, the user has clicked the 'experience' tab.
+    When experienceTabClicked is true, the user has clicked the 'experience' tab.
     This will launch the animation.
      */
-    var tabClicked = false;
+
 
     /*
     True only after the bottom line of the animation is done.
@@ -60,7 +59,7 @@ var experienceAnimation = function( p ) {
     p.draw = function() {
         console.log(canvas.position().y);
         p.background('white');
-        if (tabClicked === true) {
+        if (experienceTabClicked === true) {
             drawBottomLine();
             if (bottomLineDone === true) {
                 drawStems();
@@ -166,14 +165,17 @@ var experienceAnimation = function( p ) {
     This launches the animation.
      */
     function showAnimation() {
-        tabClicked = true;
+        experienceTabClicked = true;
+        if (aboutMeVidPlaying) {
+            aboutMeVideo.pause();
+        }
     }
 
     /**
      * If the user re-sizes the window, re-size everything as well.
      */
     p.windowResized = function() {
-        if (tabClicked) {
+        if (experienceTabClicked) {
             canvas.size(p.windowWidth, 500 - 50);
             bottomLineDone = false;
             stemDone = false;
