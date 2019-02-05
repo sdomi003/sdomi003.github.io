@@ -1,122 +1,149 @@
-
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-    <title>Sam's Personal Website</title>
+    <!-- Theme Made By www.w3schools.com - No Copyright -->
+    <title>Samuel Dominguez</title>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="backstyle.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.dom.js"></script>
-    <script type="text/javascript" src="experienceTab.js"></script>
-    <script type="text/javascript" src="aboutMeTab.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font: 20px Montserrat, sans-serif;
+            line-height: 1.8;
+            color: #f5f6f7;
+        }
+        p {font-size: 16px;}
+        .margin {margin-bottom: 20px;}
+        .bg-1 {
+            background-color: #003D4E; /* Green */
+            color: #ffffff;
+        }
+        .bg-2 {
+            background-color: #474e5d; /* Dark Blue */
+            color: #ffffff;
+        }
+        .bg-3 {
+            background-color: #ffffff; /* White */
+            color: #555555;
+        }
+        .bg-4 {
+            background-color: #2f2f2f; /* Black Gray */
+            color: #fff;
+        }
+        .container-fluid {
+            padding-top: 70px;
+            padding-bottom: 70px;
+        }
+        .navbar {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border: 0;
+            border-radius: 0;
+            margin-bottom: 0;
+            font-size: 12px;
+            letter-spacing: 5px;
+        }
+        .navbar-nav  li a:hover {
+            color: #1abc9c !important;
+        }
+    </style>
 </head>
-
 <body>
-    <div class="container-fluid">
-        <div class="row row-eq-height" >
-            <div class="col-sm-12 col-md-12 col-lg-12 padding-0 ">
-                <div id="nameDiv">
-                    <h1 id="name">
-                        s a m u e l <br> d o m i n g u e z
-                    </h1>
-                </div>
-            </div>
+
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <!--<span class="icon-bar"></span>-->
+            </button>
+            <a class="navbar-brand" href="#">Samuel Dominguez</a>
         </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">WHO</a></li>
+                <li><a href="#whatamI">WHAT</a></li>
+                <!--<li><a href="#">WHERE</a></li>-->
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- First Container -->
+<div class="container-fluid bg-1 text-center">
+    <h1 class="margin">WHO AM I?</h1>
+    <img src="images/me.jpg" class="img-rounded" style="display:inline" alt="Bird" width="350" height="500">
+    <h3>First-Generation University Student</h3>
+</div>
+
+<!-- Second Container -->
+<div class="container-fluid bg-2 text-center">
+    <h1 class="margin" id="whatamI">What Am I?</h1>
+    <div class="row">
+        <div class="col-sm-9">
+            <p id="whatamI_1">
+                My academic interests include math, computer science, finance, economics, and political science.
+                <br />
+                <br />
+                <br />
+                I've been a part of business organizations and research on campus at UC Riverside.
+            </p>
+        </div>
+
+        <div class="col-sm-3">
+            <p style="padding-right: 200px">My Amazon Badge</p>
+            <img src="images/badge.JPG" class="img-rounded" style="height:400px; width:500px; padding-right: 250px" alt="Image">
+        </div>
+        <div class="col-sm-6">
+            <p>My set-up at Amazon</p>
+            <img src="images/setup.JPG" class="img-rounded" style="width:100%" alt="Image">
+        </div>
+
+        <div class="col-sm-6">
+            <p id="whatamI_2">
+                Today, I have moved on to
+                work on my engineering interests.
+                <br />My latest job was as a software engineering intern at Amazon
+                where I shipped a multi-threaded JAVA program that used S3 in order to achieve high throughput for vast amounts of data.
+            </p>
+        </div>
+
     </div>
 
 
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item">
-            <a class="nav-link active" id="about-me-tab" data-toggle="tab" href="#aboutMe" role="tab" aria-controls="aboutMe" aria-selected="true">a b o u t </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="experience-tab" data-toggle="tab" href="#experience" role="tab" aria-controls="experience" aria-selected="false">e x p e r i e n c e</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="blog-tab" data-toggle="tab" href="#blog" role="tab" aria-controls="blog" aria-selected="false">b l o g</a>
-        </li>
-    </ul>
 
-    <div class="tab-content" id="myTabContent">
 
-        <div class="tab-pane fade" id="aboutMe" role="tabpanel" aria-labelledby="about-me-tab">
-            <h1 id = "aboutMeTitle">
-                About Me, Sam
-            </h1>
-        </div>
+</div>
 
-        <div class="tab-pane fade" id="experience" role="tabpanel" aria-labelledby="experience-tab">
+<!--&lt;!&ndash; Third Container (Grid) &ndash;&gt;-->
+<!--<div class="container-fluid bg-3 text-center">-->
+    <!--<h1 class="margin">Where To Find Me?</h1><br>-->
+    <!--<div class="row">-->
+        <!--<div class="col-sm-4">-->
+            <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>-->
+            <!--<img src="birds1.jpg" class="img-responsive margin" style="width:100%" alt="Image">-->
+        <!--</div>-->
+        <!--<div class="col-sm-4">-->
+            <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>-->
+            <!--<img src="birds2.jpg" class="img-responsive margin" style="width:100%" alt="Image">-->
+        <!--</div>-->
+        <!--<div class="col-sm-4">-->
+            <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>-->
+            <!--<img src="birds3.jpg" class="img-responsive margin" style="width:100%" alt="Image">-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
 
-            <h1 id = "experienceTitle">
-                My Experience
-            </h1>
-            <p id="arcDateAndTimePar">
-                Summer & Fall 2016 <br> Riverside, CA
-            </p>
-            <p id="sylmarDateAndTimePar">
-                Summer 2017 <br> Los Angeles, CA
-            </p>
-            <p id="amazonDateAndTimePar">
-                Summer 2018 <br> Seattle, WA
-            </p>
-
-            <div id="arcPopUp">
-                <button class="btn btn-primary"
-                        id="arcButtonPopover"
-                        title="ARC 35 Lab Leader"
-                        data-placement="top"
-                        data-toggle="popover"
-                        data-trigger="focus"
-                        data-html="true"
-                        data-content="Helped incoming freshmen at UC Riverside develop their math
-                                        skills in a 2-hour class that met 3 times a week.">
-                    ARC 35
-                </button>
-            </div>
-            <div id="sylmarPopUp">
-                <button class="btn btn-primary"
-                        id="sylmarButtonPopover"
-                        title="Sylmar Code Instructor"
-                        data-placement="right"
-                        data-toggle="popover"
-                        data-trigger="focus"
-                        data-html="true"
-                        data-content="Created and taught lessons on programming to kids.
-                                        <a href='https://sdomi003.wixsite.com/sylmar-code'
-                                        target='_blank'>
-                                        Sylmar Code Website</a>">
-                    Sylmar Code
-                </button>
-            </div>
-            <div id="amazonPopUp">
-                <button class="btn btn-primary"
-                        id="amazonButtonPopover"
-                        title="Amazon Software Engineering Intern"
-                        data-placement="top"
-                        data-toggle="popover"
-                        data-trigger="focus"
-                        data-content="Surrounded by experienced engineers, I assisted my team by listening to our
-                                        customers in order to engineer impactful tools using AWS S3 and Java.">
-                    Amazon
-                </button>
-            </div>
-            <script type="text/javascript">
-                $(function () {
-                    $('[data-toggle="popover"]').popover()
-                })
-            </script>
-
-        </div>
-
-        <div class="tab-pane fade" id="blog" role="tabpanel" aria-labelledby="blog-tab">...</div>
-    </div>
+<!--&lt;!&ndash; Footer &ndash;&gt;-->
+<!--<footer class="container-fluid bg-4 text-center">-->
+    <!--<p>Bootstrap Theme Made By <a href="https://www.w3schools.com">www.w3schools.com</a></p>-->
+<!--</footer>-->
 
 </body>
 </html>

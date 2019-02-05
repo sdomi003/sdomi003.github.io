@@ -21,8 +21,14 @@ var aboutMeAnimation = function( p ) {
 
         canvas = p.createCanvas(p.windowWidth - 20, 3*p.windowWidth/4);
 
-        var experienceTab = p.select('#about-me-tab');
-        experienceTab.mouseClicked(playVideo);
+        var aboutMeTab = p.select('#about-me-tab');
+        aboutMeTab.mouseClicked(playVideo);
+
+        var blogTab = p.select('#blog-tab');
+        blogTab.mouseClicked(pauseVid);
+
+        var experienceTab = p.select('#experience-tab');
+        experienceTab.mouseClicked(pauseVid);
 
     };
 
@@ -50,6 +56,12 @@ var aboutMeAnimation = function( p ) {
 
     function eraseUserSketch() {
         lineTrail = [];
+    }
+
+    function pauseVid() {
+        if (aboutMeVidPlaying) {
+            aboutMeVideo.pause();
+        }
     }
 };
 

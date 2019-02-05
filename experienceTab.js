@@ -5,12 +5,6 @@ var experienceTabClicked = false;
 var experienceAnimation = function( p ) {
     var canvas;
     /*
-    When experienceTabClicked is true, the user has clicked the 'experience' tab.
-    This will launch the animation.
-     */
-
-
-    /*
     True only after the bottom line of the animation is done.
      */
     var bottomLineDone = false;
@@ -34,8 +28,15 @@ var experienceAnimation = function( p ) {
     p.setup = function() {
         canvas = p.createCanvas(p.windowWidth - 50, 500);
         canvas.style('z-index', '-1');
+
         var experienceTab = p.select('#experience-tab');
         experienceTab.mouseClicked(showAnimation);
+
+        var aboutMeTab = p.select('#about-me-tab');
+        aboutMeTab.mouseClicked(resetAnimation);
+
+        var blogTab = p.select('#blog-tab');
+        blogTab.mouseClicked(resetAnimation);
 
         arcButton = p.select('#arcPopUp');
         arcButton.hide();
@@ -54,6 +55,8 @@ var experienceAnimation = function( p ) {
 
         amazonDateAndLocation = p.select('#amazonDateAndTimePar');
         amazonDateAndLocation.hide();
+
+
     };
 
     p.draw = function() {
@@ -166,9 +169,6 @@ var experienceAnimation = function( p ) {
      */
     function showAnimation() {
         experienceTabClicked = true;
-        if (aboutMeVidPlaying) {
-            aboutMeVideo.pause();
-        }
     }
 
     /**
@@ -183,6 +183,17 @@ var experienceAnimation = function( p ) {
         }
 
     };
+
+    function resetAnimation() {
+        // if not done drawing, re-draw it
+        if (!buttonsMade) {
+            experienceTabClicked = false;
+            bottomLineDone = false;
+            stemDone = false;
+            stemElapsed = 0;
+            bottomLineLength = 50;
+        }
+    }
 };
 
 var myp5 = new p5(experienceAnimation, 'experience');

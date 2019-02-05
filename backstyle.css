@@ -1,100 +1,19 @@
-html,body {
-    padding: 0;
-    margin: 0;
-    background-color: #ffffff;
-}
-
-#nameDiv {
-    color: #393939;
-    padding: 20px;
-    background-color: #323149;
-    text-align: right;
-}
-
-#name {
-    font-weight: bolder;
-    font-size:  xx-large;
-    color: 	#FFFFFF;
-}
-
-.nav-tabs > li {
-    float:none;
-    display: inline-block;
-    zoom: normal;
-}
-
-.nav-tabs {
+#whatamI_1 {
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 100px;
     text-align: center;
-    font-size: xx-large;
-    background-color: #FFF494;
-    background-size: 50px;
+    line-height: 50px;
+    font-size: 25px;
 }
 
-
-#about-me-tab {
-    font-size: xx-large;
-    color: #4A7B68;
-}
-
-#experience-tab {
-    font-size: xx-large;
-    color: #3d3d42;
-}
-#blog-tab {
-    font-size: xx-large;
-    color: #8F8E9B;
-}
-
-.popover{
-    width: 100%; /* Max Width of the popover (depending on the container!) */
-}
-
-.popover-title {
+#whatamI_2 {
+    padding-left: 100px;
+    padding-right: 100px;
     text-align: center;
-    color: black;
-    font-size: 20px;
-
-}
-.popover-content {
-    color: black;
-    font-size: 15px;
-}
-
-#arcDateAndTimePar {
-    color: black;
-}
-
-#sylmarDateAndTimePar {
-    color: black;
-}
-
-#amazonDateAndTimePar {
-    color: black;
-}
-
-.btn-primary {
-    background-color: #002846;
-    color: white;
-}
-
-#aboutMeTitle {
-    padding: 30px;
-    color: #002846;
-    text-align: left;
-}
-
-#experienceTitle {
-    padding: 30px;
-    color: #c1cdc1;
-    text-align: left;
+    line-height: 50px;
+    padding-top: 150px;
+    font-size: 25px;
 }
 
 
-.padding-0{
-    padding-right:0;
-    padding-left:0;
-}
-
-.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
-    background-color: #ECECEE;
-}
